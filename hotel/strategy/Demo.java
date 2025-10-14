@@ -2,10 +2,12 @@ package strategy;
 
 import java.math.BigDecimal;
 
+import factory.method.Tier;
+
 public final class Demo {
     public static void main(String[] args) {
-        Booking deluxe2N = new Booking(RoomType.DELUXE, 2, 1, 1);
-        Booking suite4N  = new Booking(RoomType.SUITE, 4, 2, 2);
+        Booking deluxe2N = new Booking(RoomType.DELUXE, 2, 1, 1, Tier.GOLD);
+        Booking suite4N  = new Booking(RoomType.SUITE, 4, 2, 2, Tier.NORMAL);
 
         BookingService svc = new BookingService(new StandardStrategy());
         print(svc, deluxe2N);  // 기본가

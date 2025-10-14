@@ -1,6 +1,8 @@
 package decorator;
 
 import java.math.BigDecimal;
+
+import factory.method.Tier;
 import strategy.*;
 
 /**
@@ -11,7 +13,7 @@ import strategy.*;
 public final class DemoDecorator {
     public static void main(String[] args) {
         // 1) 예시 Booking (성인/아동 포함)
-        Booking deluxe3N = new Booking(RoomType.DELUXE, /*nights*/3, /*adults*/2, /*children*/1);
+        Booking deluxe3N = new Booking(RoomType.DELUXE, /*nights*/3, /*adults*/2, /*children*/1, Tier.GOLD);
 
         // 2) 기본 요금 전략 선택 (예: 성수기 35% 가산)
         PricingStrategy peak = new PeakSeasonStrategy(new BigDecimal("1.35"));
